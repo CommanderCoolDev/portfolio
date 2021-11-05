@@ -1,77 +1,70 @@
-## Готовая сборка Webpack
+# Getting Started with Create React App
 
-<div>
-    <a href="https://github.com/webpack/webpack">
-        <img width="150" height="150" src="https://webpack.js.org/assets/icon-square-big.svg">
-    </a>
-</div>
-<br/>
-<br/>
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-![GitHub release](https://img.shields.io/github/release/brovkin/webpack-frontend-template.svg)
-![GitHub stars](https://img.shields.io/github/stars/brovkin/webpack-frontend-template.svg?style=social)
-![GitHub watchers](https://img.shields.io/github/watchers/brovkin/webpack-frontend-template.svg?style=social)
+## Available Scripts
 
-## Особенности сборки
+In the project directory, you can run:
 
-* используется [Babel](https://babeljs.io/) для поддержки современного JavaScript (ES6) в браузерах
-* выбираете любой препроцессор SASS/SCSS/LESS
-* ваш CSS и JS оптимизируется и минифицируется
-* установлен пакет webpack-dev-server - вам не потребуется постоянно перезагружать браузер
-* поддержка [TypeScript](https://www.typescriptlang.org/)
-* анализ вашего бандла с помощью пакета [webpack-bundle-analyzer](https://www.npmjs.com/package/webpack-bundle-analyzer) | команда ```npm run stats```
-* [ESlint](https://eslint.org/) позволит сделать ваш код приятным и чистым
-* Поддержка и чтение файлов CSV/XML, на выходе получаем массив данных
+### `npm start`
 
-## Файловая структура
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-```
-webpack-frontend-template
-├── dist
-├── src
-│   ├── assets
-│       ├── fonts
-│       └── images
-│   ├── styles
-│   ├── index.html
-│   └── index.js
-├── webpack.config.js
-├── package.json
-├── .gitignore
-├── .eslintrc
-└── .gitignore
-```
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-> В зависимости от фреймворка, вы можете переделать организацию файлов в папке src т.к. обычно она отличается
+### `npm test`
 
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-## Команды
+### `npm run build`
 
-* ```npm run dev``` - собираем development
-* ```npm run build``` - собираем production
-* ```npm start``` - слежение за файлами и открываем в браузере
-* ```npm run stats``` - смотрим размеры и статы бандла
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-## Установка
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-Установим все необходимые пакеты из package.json
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-```bash
-npm install
-```
+### `npm run eject`
 
-Запускаем
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-```bash
-npm start
-```
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-## Связаться со мной
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-* ВКонтакте: [@artembrovkin](https://vk.com/artembrovkin)
-* Instagram: [@brovkin_artem](https://www.instagram.com/brovkin_artem/)
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Сайт
-### [brozabro.ru](https://brozabro.ru)
+## Learn More
 
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

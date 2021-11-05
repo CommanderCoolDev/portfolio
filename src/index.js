@@ -1,13 +1,19 @@
-import './styles/index.scss';
-import './assets/fonts/Roboto-Regular.ttf';
-import './component.js';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import {BrowserRouter} from 'react-router-dom';
 
-const app = document.getElementById('app');
 
-const greeting = 'Hello World';
 
-app.innerHTML = `
-    <strong class="main-title">
-        ${greeting}. Webpack работает!
-    </strong>
-`;
+ReactDOM.render(
+  <React.StrictMode>
+    <BrowserRouter>
+    <App />
+    </BrowserRouter>
+    
+  </React.StrictMode>,
+  document.getElementById('root')
+);
+
+

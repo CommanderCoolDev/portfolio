@@ -1,8 +1,8 @@
 {
-  "name": "portfolio-under-construction-",
+  "name": "portfolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://CommanderCoolDev.github.io/portfolio-under-construction-",
+  "homepage": "https://CommanderCoolDev.github.io/portfolio",
   "dependencies": {
     "@testing-library/jest-dom": "^5.15.0",
     "@testing-library/react": "^11.2.7",

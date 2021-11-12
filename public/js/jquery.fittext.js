@@ -18,7 +18,7 @@
           minFontSize: Number.NEGATIVE_INFINITY,
           maxFontSize: Number.POSITIVE_INFINITY,
         },
-        options,
+        options
       );
 
     return this.each(function () {
@@ -28,14 +28,14 @@
       // Resizer() resizes items based on the object width divided by the compressor * 10
       var resizer = function () {
         $this.css(
-          'font-size',
+          "font-size",
           Math.max(
             Math.min(
               $this.width() / (compressor * 10),
-              parseFloat(settings.maxFontSize),
+              parseFloat(settings.maxFontSize)
             ),
-            parseFloat(settings.minFontSize),
-          ),
+            parseFloat(settings.minFontSize)
+          )
         );
       };
 
@@ -43,7 +43,7 @@
       resizer();
 
       // Call on resize. Opera debounces their resize by default.
-      $(window).on('resize.fittext orientationchange.fittext', resizer);
+      $(window).on("resize.fittext orientationchange.fittext", resizer);
     });
   };
 })(jQuery);

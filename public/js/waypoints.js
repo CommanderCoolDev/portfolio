@@ -7,11 +7,11 @@ https://github.com/imakewebthings/jquery-waypoints/blob/master/GPL-license.txt
 */
 (function ($, k, m, i, d) {
   var e = $(i),
-    g = 'waypoint.reached',
+    g = "waypoint.reached",
     b = function (o, n) {
       o.element.trigger(g, n);
       if (o.options.triggerOnce) {
-        o.element[k]('destroy');
+        o.element[k]("destroy");
       }
     },
     h = function (p, o) {
@@ -43,7 +43,7 @@ https://github.com/imakewebthings/jquery-waypoints/blob/master/GPL-license.txt
             }),
             o = r.length;
           if (!this.oldScroll || !q) {
-            $[m]('refresh');
+            $[m]("refresh");
           }
           this.oldScroll = q;
           if (!o) {
@@ -54,14 +54,14 @@ https://github.com/imakewebthings/jquery-waypoints/blob/master/GPL-license.txt
           }
           $.each(r, function (u, t) {
             if (t.options.continuous || u === o - 1) {
-              b(t, [p ? 'down' : 'up']);
+              b(t, [p ? "down" : "up"]);
             }
           });
         }, this),
       });
       $(n)
         .bind(
-          'scroll.waypoints',
+          "scroll.waypoints",
           $.proxy(function () {
             if (!this.didScroll) {
               this.didScroll = true;
@@ -70,30 +70,30 @@ https://github.com/imakewebthings/jquery-waypoints/blob/master/GPL-license.txt
                   this.doScroll();
                   this.didScroll = false;
                 }, this),
-                $[m].settings.scrollThrottle,
+                $[m].settings.scrollThrottle
               );
             }
-          }, this),
+          }, this)
         )
         .bind(
-          'resize.waypoints',
+          "resize.waypoints",
           $.proxy(function () {
             if (!this.didResize) {
               this.didResize = true;
               i.setTimeout(
                 $.proxy(function () {
-                  $[m]('refresh');
+                  $[m]("refresh");
                   this.didResize = false;
                 }, this),
-                $[m].settings.resizeThrottle,
+                $[m].settings.resizeThrottle
               );
             }
-          }, this),
+          }, this)
         );
       e.load(
         $.proxy(function () {
           this.doScroll();
-        }, this),
+        }, this)
       );
     },
     j = function (n) {
@@ -127,10 +127,10 @@ https://github.com/imakewebthings/jquery-waypoints/blob/master/GPL-license.txt
             s = p < 0 ? $.fn[k].defaults : q.waypoints[p].options,
             r = $.extend({}, s, n);
           r.offset =
-            r.offset === 'bottom-in-view'
+            r.offset === "bottom-in-view"
               ? function () {
                   var v = $.isWindow(u)
-                    ? $[m]('viewportHeight')
+                    ? $[m]("viewportHeight")
                     : $(u).height();
                   return v - $(this).outerHeight();
                 }
@@ -147,7 +147,7 @@ https://github.com/imakewebthings/jquery-waypoints/blob/master/GPL-license.txt
             t.bind(g, n.handler);
           }
         });
-        $[m]('refresh');
+        $[m]("refresh");
         return this;
       },
       remove: function () {
@@ -158,7 +158,7 @@ https://github.com/imakewebthings/jquery-waypoints/blob/master/GPL-license.txt
             if (q >= 0) {
               s.waypoints.splice(q, 1);
               if (!s.waypoints.length) {
-                s.element.unbind('scroll.waypoints resize.waypoints');
+                s.element.unbind("scroll.waypoints resize.waypoints");
                 f.splice(r, 1);
               }
             }
@@ -166,7 +166,7 @@ https://github.com/imakewebthings/jquery-waypoints/blob/master/GPL-license.txt
         });
       },
       destroy: function () {
-        return this.unbind(g)[k]('remove');
+        return this.unbind(g)[k]("remove");
       },
     },
     a = {
@@ -174,7 +174,7 @@ https://github.com/imakewebthings/jquery-waypoints/blob/master/GPL-license.txt
         $.each(f, function (r, s) {
           var q = $.isWindow(s.element[0]),
             n = q ? 0 : s.element.offset().top,
-            p = q ? $[m]('viewportHeight') : s.element.height(),
+            p = q ? $[m]("viewportHeight") : s.element.height(),
             o = q ? 0 : s.element.scrollTop();
           $.each(s.waypoints, function (u, x) {
             if (!x) {
@@ -182,12 +182,12 @@ https://github.com/imakewebthings/jquery-waypoints/blob/master/GPL-license.txt
             }
             var t = x.options.offset,
               w = x.offset;
-            if (typeof x.options.offset === 'function') {
+            if (typeof x.options.offset === "function") {
               t = x.options.offset.apply(x.element);
             } else {
-              if (typeof x.options.offset === 'string') {
+              if (typeof x.options.offset === "string") {
                 var v = parseFloat(x.options.offset);
-                t = x.options.offset.indexOf('%')
+                t = x.options.offset.indexOf("%")
                   ? Math.ceil(p * (v / 100))
                   : v;
               }
@@ -197,13 +197,13 @@ https://github.com/imakewebthings/jquery-waypoints/blob/master/GPL-license.txt
               return;
             }
             if (w !== null && s.oldScroll > w && s.oldScroll <= x.offset) {
-              b(x, ['up']);
+              b(x, ["up"]);
             } else {
               if (w !== null && s.oldScroll < w && s.oldScroll >= x.offset) {
-                b(x, ['down']);
+                b(x, ["down"]);
               } else {
                 if (!w && s.element.scrollTop() > x.offset) {
-                  b(x, ['down']);
+                  b(x, ["down"]);
                 }
               }
             }
@@ -230,13 +230,13 @@ https://github.com/imakewebthings/jquery-waypoints/blob/master/GPL-license.txt
     if (c[n]) {
       return c[n].apply(this, Array.prototype.slice.call(arguments, 1));
     } else {
-      if (typeof n === 'function' || !n) {
+      if (typeof n === "function" || !n) {
         return c.init.apply(this, arguments);
       } else {
-        if (typeof n === 'object') {
+        if (typeof n === "object") {
           return c.init.apply(this, [null, n]);
         } else {
-          $.error('Method ' + n + ' does not exist on jQuery ' + k);
+          $.error("Method " + n + " does not exist on jQuery " + k);
         }
       }
     }
@@ -256,6 +256,6 @@ https://github.com/imakewebthings/jquery-waypoints/blob/master/GPL-license.txt
   };
   $[m].settings = { resizeThrottle: 200, scrollThrottle: 100 };
   e.load(function () {
-    $[m]('refresh');
+    $[m]("refresh");
   });
-})(jQuery, 'waypoint', 'waypoints', window);
+})(jQuery, "waypoint", "waypoints", window);

@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 class Testimonials extends Component {
   render() {
     if (this.props.data) {
       var testimonials = this.props.data.testimonials.map(function (
-        testimonials,
+        testimonials
       ) {
         return (
           <li key={testimonials.user}>

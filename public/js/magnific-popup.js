@@ -1,18 +1,18 @@
 // Magnific Popup v0.9.9 by Dmitry Semenov
 // http://bit.ly/magnific-popup#build=inline+image+retina+imagezoom+fastclick
 (function (a) {
-  var b = 'Close',
-    c = 'BeforeClose',
-    d = 'AfterClose',
-    e = 'BeforeAppend',
-    f = 'MarkupParse',
-    g = 'Open',
-    h = 'Change',
-    i = 'mfp',
-    j = '.' + i,
-    k = 'mfp-ready',
-    l = 'mfp-removing',
-    m = 'mfp-prevent-close',
+  var b = "Close",
+    c = "BeforeClose",
+    d = "AfterClose",
+    e = "BeforeAppend",
+    f = "MarkupParse",
+    g = "Open",
+    h = "Change",
+    i = "mfp",
+    j = "." + i,
+    k = "mfp-ready",
+    l = "mfp-removing",
+    m = "mfp-prevent-close",
     n,
     o = function () {},
     p = !!window.jQuery,
@@ -27,9 +27,9 @@
       n.ev.on(i + a + j, b);
     },
     y = function (b, c, d, e) {
-      var f = document.createElement('div');
+      var f = document.createElement("div");
       return (
-        (f.className = 'mfp-' + b),
+        (f.className = "mfp-" + b),
         d && (f.innerHTML = d),
         e ? c && c.appendChild(f) : ((f = a(f)), c && f.appendTo(c)),
         f
@@ -45,7 +45,7 @@
     A = function (b) {
       if (b !== w || !n.currTemplate.closeBtn)
         (n.currTemplate.closeBtn = a(
-          n.st.closeMarkup.replace('%title%', n.st.tClose),
+          n.st.closeMarkup.replace("%title%", n.st.tClose)
         )),
           (w = b);
       return n.currTemplate.closeBtn;
@@ -55,18 +55,18 @@
         ((n = new o()), n.init(), (a.magnificPopup.instance = n));
     },
     C = function () {
-      var a = document.createElement('p').style,
-        b = ['ms', 'O', 'Moz', 'Webkit'];
+      var a = document.createElement("p").style,
+        b = ["ms", "O", "Moz", "Webkit"];
       if (a.transition !== undefined) return !0;
-      while (b.length) if (b.pop() + 'Transition' in a) return !0;
+      while (b.length) if (b.pop() + "Transition" in a) return !0;
       return !1;
     };
   (o.prototype = {
     constructor: o,
     init: function () {
       var b = navigator.appVersion;
-      (n.isIE7 = b.indexOf('MSIE 7.') !== -1),
-        (n.isIE8 = b.indexOf('MSIE 8.') !== -1),
+      (n.isIE7 = b.indexOf("MSIE 7.") !== -1),
+        (n.isIE8 = b.indexOf("MSIE 8.") !== -1),
         (n.isLowIE = n.isIE7 || n.isIE8),
         (n.isAndroid = /android/gi.test(b)),
         (n.isIOS = /iphone|ipad|ipod/gi.test(b)),
@@ -75,7 +75,7 @@
           n.isAndroid ||
           n.isIOS ||
           /(Opera Mini)|Kindle|webOS|BlackBerry|(Opera Mobi)|(Windows Phone)|IEMobile/i.test(
-            navigator.userAgent,
+            navigator.userAgent
           )),
         (t = a(document)),
         (n.popupsCache = {});
@@ -102,7 +102,7 @@
         return;
       }
       (n.types = []),
-        (v = ''),
+        (v = ""),
         b.mainEl && b.mainEl.length ? (n.ev = b.mainEl.eq(0)) : (n.ev = t),
         b.key
           ? (n.popupsCache[b.key] || (n.popupsCache[b.key] = {}),
@@ -110,7 +110,7 @@
           : (n.currTemplate = {}),
         (n.st = a.extend(!0, {}, a.magnificPopup.defaults, b)),
         (n.fixedContentPos =
-          n.st.fixedContentPos === 'auto'
+          n.st.fixedContentPos === "auto"
             ? !n.probablyMobile
             : n.st.fixedContentPos),
         n.st.modal &&
@@ -119,50 +119,50 @@
           (n.st.showCloseBtn = !1),
           (n.st.enableEscapeKey = !1)),
         n.bgOverlay ||
-          ((n.bgOverlay = y('bg').on('click' + j, function () {
+          ((n.bgOverlay = y("bg").on("click" + j, function () {
             n.close();
           })),
-          (n.wrap = y('wrap')
-            .attr('tabindex', -1)
-            .on('click' + j, function (a) {
+          (n.wrap = y("wrap")
+            .attr("tabindex", -1)
+            .on("click" + j, function (a) {
               n._checkIfClose(a.target) && n.close();
             })),
-          (n.container = y('container', n.wrap))),
-        (n.contentContainer = y('content')),
+          (n.container = y("container", n.wrap))),
+        (n.contentContainer = y("content")),
         n.st.preloader &&
-          (n.preloader = y('preloader', n.container, n.st.tLoading));
+          (n.preloader = y("preloader", n.container, n.st.tLoading));
       var h = a.magnificPopup.modules;
       for (c = 0; c < h.length; c++) {
         var i = h[c];
-        (i = i.charAt(0).toUpperCase() + i.slice(1)), n['init' + i].call(n);
+        (i = i.charAt(0).toUpperCase() + i.slice(1)), n["init" + i].call(n);
       }
-      z('BeforeOpen'),
+      z("BeforeOpen"),
         n.st.showCloseBtn &&
           (n.st.closeBtnInside
             ? (x(f, function (a, b, c, d) {
                 c.close_replaceWith = A(d.type);
               }),
-              (v += ' mfp-close-btn-in'))
+              (v += " mfp-close-btn-in"))
             : n.wrap.append(A())),
-        n.st.alignTop && (v += ' mfp-align-top'),
+        n.st.alignTop && (v += " mfp-align-top"),
         n.fixedContentPos
           ? n.wrap.css({
               overflow: n.st.overflowY,
-              overflowX: 'hidden',
+              overflowX: "hidden",
               overflowY: n.st.overflowY,
             })
-          : n.wrap.css({ top: r.scrollTop(), position: 'absolute' }),
+          : n.wrap.css({ top: r.scrollTop(), position: "absolute" }),
         (n.st.fixedBgPos === !1 ||
-          (n.st.fixedBgPos === 'auto' && !n.fixedContentPos)) &&
-          n.bgOverlay.css({ height: t.height(), position: 'absolute' }),
+          (n.st.fixedBgPos === "auto" && !n.fixedContentPos)) &&
+          n.bgOverlay.css({ height: t.height(), position: "absolute" }),
         n.st.enableEscapeKey &&
-          t.on('keyup' + j, function (a) {
+          t.on("keyup" + j, function (a) {
             a.keyCode === 27 && n.close();
           }),
-        r.on('resize' + j, function () {
+        r.on("resize" + j, function () {
           n.updateSize();
         }),
-        n.st.closeOnContentClick || (v += ' mfp-auto-cursor'),
+        n.st.closeOnContentClick || (v += " mfp-auto-cursor"),
         v && n.wrap.addClass(v);
       var l = (n.wH = r.height()),
         m = {};
@@ -172,22 +172,22 @@
       }
       n.fixedContentPos &&
         (n.isIE7
-          ? a('body, html').css('overflow', 'hidden')
-          : (m.overflow = 'hidden'));
+          ? a("body, html").css("overflow", "hidden")
+          : (m.overflow = "hidden"));
       var p = n.st.mainClass;
       return (
-        n.isIE7 && (p += ' mfp-ie7'),
+        n.isIE7 && (p += " mfp-ie7"),
         p && n._addClassToMFP(p),
         n.updateItemHTML(),
-        z('BuildControls'),
-        a('html').css(m),
+        z("BuildControls"),
+        a("html").css(m),
         n.bgOverlay.add(n.wrap).prependTo(n.st.prependTo || s),
         (n._lastFocusedEl = document.activeElement),
         setTimeout(function () {
           n.content
             ? (n._addClassToMFP(k), n._setFocus())
             : n.bgOverlay.addClass(k),
-            t.on('focusin' + j, n._onFocusIn);
+            t.on("focusin" + j, n._onFocusIn);
         }, 16),
         (n.isOpen = !0),
         n.updateSize(l),
@@ -208,22 +208,22 @@
     },
     _close: function () {
       z(b);
-      var c = l + ' ' + k + ' ';
+      var c = l + " " + k + " ";
       n.bgOverlay.detach(),
         n.wrap.detach(),
         n.container.empty(),
-        n.st.mainClass && (c += n.st.mainClass + ' '),
+        n.st.mainClass && (c += n.st.mainClass + " "),
         n._removeClassFromMFP(c);
       if (n.fixedContentPos) {
-        var e = { marginRight: '' };
-        n.isIE7 ? a('body, html').css('overflow', '') : (e.overflow = ''),
-          a('html').css(e);
+        var e = { marginRight: "" };
+        n.isIE7 ? a("body, html").css("overflow", "") : (e.overflow = ""),
+          a("html").css(e);
       }
-      t.off('keyup' + j + ' focusin' + j),
+      t.off("keyup" + j + " focusin" + j),
         n.ev.off(j),
-        n.wrap.attr('class', 'mfp-wrap').removeAttr('style'),
-        n.bgOverlay.attr('class', 'mfp-bg'),
-        n.container.attr('class', 'mfp-container'),
+        n.wrap.attr("class", "mfp-wrap").removeAttr("style"),
+        n.bgOverlay.attr("class", "mfp-bg"),
+        n.container.attr("class", "mfp-container"),
         n.st.showCloseBtn &&
           (!n.st.closeBtnInside || n.currTemplate[n.currItem.type] === !0) &&
           n.currTemplate.closeBtn &&
@@ -239,9 +239,9 @@
       if (n.isIOS) {
         var b = document.documentElement.clientWidth / window.innerWidth,
           c = window.innerHeight * b;
-        n.wrap.css('height', c), (n.wH = c);
+        n.wrap.css("height", c), (n.wH = c);
       } else n.wH = a || r.height();
-      n.fixedContentPos || n.wrap.css('height', n.wH), z('Resize');
+      n.fixedContentPos || n.wrap.css("height", n.wH), z("Resize");
     },
     updateItemHTML: function () {
       var b = n.items[n.index];
@@ -249,34 +249,34 @@
         n.content && n.content.detach(),
         b.parsed || (b = n.parseEl(n.index));
       var c = b.type;
-      z('BeforeChange', [n.currItem ? n.currItem.type : '', c]),
+      z("BeforeChange", [n.currItem ? n.currItem.type : "", c]),
         (n.currItem = b);
       if (!n.currTemplate[c]) {
         var d = n.st[c] ? n.st[c].markup : !1;
-        z('FirstMarkupParse', d),
+        z("FirstMarkupParse", d),
           d ? (n.currTemplate[c] = a(d)) : (n.currTemplate[c] = !0);
       }
-      u && u !== b.type && n.container.removeClass('mfp-' + u + '-holder');
-      var e = n['get' + c.charAt(0).toUpperCase() + c.slice(1)](
+      u && u !== b.type && n.container.removeClass("mfp-" + u + "-holder");
+      var e = n["get" + c.charAt(0).toUpperCase() + c.slice(1)](
         b,
-        n.currTemplate[c],
+        n.currTemplate[c]
       );
       n.appendContent(e, c),
         (b.preloaded = !0),
         z(h, b),
         (u = b.type),
         n.container.prepend(n.contentContainer),
-        z('AfterChange');
+        z("AfterChange");
     },
     appendContent: function (a, b) {
       (n.content = a),
         a
           ? n.st.showCloseBtn && n.st.closeBtnInside && n.currTemplate[b] === !0
-            ? n.content.find('.mfp-close').length || n.content.append(A())
+            ? n.content.find(".mfp-close").length || n.content.append(A())
             : (n.content = a)
-          : (n.content = ''),
+          : (n.content = ""),
         z(e),
-        n.container.addClass('mfp-' + b + '-holder'),
+        n.container.addClass("mfp-" + b + "-holder"),
         n.contentContainer.append(n.content);
     },
     parseEl: function (b) {
@@ -288,19 +288,19 @@
       if (c.el) {
         var e = n.types;
         for (var f = 0; f < e.length; f++)
-          if (c.el.hasClass('mfp-' + e[f])) {
+          if (c.el.hasClass("mfp-" + e[f])) {
             d = e[f];
             break;
           }
-        (c.src = c.el.attr('data-mfp-src')),
-          c.src || (c.src = c.el.attr('href'));
+        (c.src = c.el.attr("data-mfp-src")),
+          c.src || (c.src = c.el.attr("href"));
       }
       return (
-        (c.type = d || n.st.type || 'inline'),
+        (c.type = d || n.st.type || "inline"),
         (c.index = b),
         (c.parsed = !0),
         (n.items[b] = c),
-        z('ElementParse', c),
+        z("ElementParse", c),
         n.items[b]
       );
     },
@@ -309,7 +309,7 @@
         (c.mfpEl = this), n._openClick(c, a, b);
       };
       b || (b = {});
-      var d = 'click.magnificPopup';
+      var d = "click.magnificPopup";
       (b.mainEl = a),
         b.items
           ? ((b.isObj = !0), a.off(d).on(d, c))
@@ -339,17 +339,17 @@
     },
     updateStatus: function (a, b) {
       if (n.preloader) {
-        q !== a && n.container.removeClass('mfp-s-' + q),
-          !b && a === 'loading' && (b = n.st.tLoading);
+        q !== a && n.container.removeClass("mfp-s-" + q),
+          !b && a === "loading" && (b = n.st.tLoading);
         var c = { status: a, text: b };
-        z('UpdateStatus', c),
+        z("UpdateStatus", c),
           (a = c.status),
           (b = c.text),
           n.preloader.html(b),
-          n.preloader.find('a').on('click', function (a) {
+          n.preloader.find("a").on("click", function (a) {
             a.stopImmediatePropagation();
           }),
-          n.container.addClass('mfp-s-' + a),
+          n.container.addClass("mfp-s-" + a),
           (q = a);
       }
     },
@@ -360,7 +360,7 @@
       if (c && d) return !0;
       if (
         !n.content ||
-        a(b).hasClass('mfp-close') ||
+        a(b).hasClass("mfp-close") ||
         (n.preloader && b === n.preloader[0])
       )
         return !0;
@@ -393,30 +393,30 @@
         z(f, [b, c, d]),
         a.each(c, function (a, c) {
           if (c === undefined || c === !1) return !0;
-          e = a.split('_');
+          e = a.split("_");
           if (e.length > 1) {
-            var d = b.find(j + '-' + e[0]);
+            var d = b.find(j + "-" + e[0]);
             if (d.length > 0) {
               var f = e[1];
-              f === 'replaceWith'
+              f === "replaceWith"
                 ? d[0] !== c[0] && d.replaceWith(c)
-                : f === 'img'
-                ? d.is('img')
-                  ? d.attr('src', c)
+                : f === "img"
+                ? d.is("img")
+                  ? d.attr("src", c)
                   : d.replaceWith(
-                      '<img src="' + c + '" class="' + d.attr('class') + '" />',
+                      '<img src="' + c + '" class="' + d.attr("class") + '" />'
                     )
                 : d.attr(e[1], c);
             }
-          } else b.find(j + '-' + a).html(c);
+          } else b.find(j + "-" + a).html(c);
         });
     },
     _getScrollbarSize: function () {
       if (n.scrollbarSize === undefined) {
-        var a = document.createElement('div');
-        (a.id = 'mfp-sbm'),
+        var a = document.createElement("div");
+        (a.id = "mfp-sbm"),
           (a.style.cssText =
-            'width: 99px; height: 99px; overflow: scroll; position: absolute; top: -9999px;'),
+            "width: 99px; height: 99px; overflow: scroll; position: absolute; top: -9999px;"),
           document.body.appendChild(a),
           (n.scrollbarSize = a.offsetWidth - a.clientWidth),
           document.body.removeChild(a);
@@ -449,9 +449,9 @@
         disableOn: 0,
         key: null,
         midClick: !1,
-        mainClass: '',
+        mainClass: "",
         preloader: !0,
-        focus: '',
+        focus: "",
         closeOnContentClick: !1,
         closeOnBgClick: !0,
         closeBtnInside: !0,
@@ -461,22 +461,22 @@
         alignTop: !1,
         removalDelay: 0,
         prependTo: null,
-        fixedContentPos: 'auto',
-        fixedBgPos: 'auto',
-        overflowY: 'auto',
+        fixedContentPos: "auto",
+        fixedBgPos: "auto",
+        overflowY: "auto",
         closeMarkup:
           '<button title="%title%" type="button" class="mfp-close">&times;</button>',
-        tClose: 'Close (Esc)',
-        tLoading: 'Loading...',
+        tClose: "Close (Esc)",
+        tLoading: "Loading...",
       },
     }),
     (a.fn.magnificPopup = function (b) {
       B();
       var c = a(this);
-      if (typeof b == 'string')
-        if (b === 'open') {
+      if (typeof b == "string")
+        if (b === "open") {
           var d,
-            e = p ? c.data('magnificPopup') : c[0].magnificPopup,
+            e = p ? c.data("magnificPopup") : c[0].magnificPopup,
             f = parseInt(arguments[1], 10) || 0;
           e.items
             ? (d = e.items[f])
@@ -486,11 +486,11 @@
           n.isOpen && n[b].apply(n, Array.prototype.slice.call(arguments, 1));
       else
         (b = a.extend(!0, {}, b)),
-          p ? c.data('magnificPopup', b) : (c[0].magnificPopup = b),
+          p ? c.data("magnificPopup", b) : (c[0].magnificPopup = b),
           n.addGroup(c, b);
       return c;
     });
-  var D = 'inline',
+  var D = "inline",
     E,
     F,
     G,
@@ -499,14 +499,14 @@
     };
   a.magnificPopup.registerModule(D, {
     options: {
-      hiddenClass: 'hide',
-      markup: '',
-      tNotFound: 'Content not found',
+      hiddenClass: "hide",
+      markup: "",
+      tNotFound: "Content not found",
     },
     proto: {
       initInline: function () {
         n.types.push(D),
-          x(b + '.' + D, function () {
+          x(b + "." + D, function () {
             H();
           });
       },
@@ -519,13 +519,13 @@
             var f = e[0].parentNode;
             f &&
               f.tagName &&
-              (F || ((E = d.hiddenClass), (F = y(E)), (E = 'mfp-' + E)),
+              (F || ((E = d.hiddenClass), (F = y(E)), (E = "mfp-" + E)),
               (G = e.after(F).detach().removeClass(E))),
-              n.updateStatus('ready');
-          } else n.updateStatus('error', d.tNotFound), (e = a('<div>'));
+              n.updateStatus("ready");
+          } else n.updateStatus("error", d.tNotFound), (e = a("<div>"));
           return (b.inlineElement = e), e;
         }
-        return n.updateStatus('ready'), n._parseMarkup(c, {}, b), c;
+        return n.updateStatus("ready"), n._parseMarkup(c, {}, b), c;
       },
     },
   });
@@ -535,32 +535,32 @@
       var c = n.st.image.titleSrc;
       if (c) {
         if (a.isFunction(c)) return c.call(n, b);
-        if (b.el) return b.el.attr(c) || '';
+        if (b.el) return b.el.attr(c) || "";
       }
-      return '';
+      return "";
     };
-  a.magnificPopup.registerModule('image', {
+  a.magnificPopup.registerModule("image", {
     options: {
       markup:
         '<div class="mfp-figure"><div class="mfp-close"></div><figure><div class="mfp-img"></div><figcaption><div class="mfp-bottom-bar"><div class="mfp-title"></div><div class="mfp-counter"></div></div></figcaption></figure></div>',
-      cursor: 'mfp-zoom-out-cur',
-      titleSrc: 'title',
+      cursor: "mfp-zoom-out-cur",
+      titleSrc: "title",
       verticalFit: !0,
       tError: '<a href="%url%">The image</a> could not be loaded.',
     },
     proto: {
       initImage: function () {
         var a = n.st.image,
-          c = '.image';
-        n.types.push('image'),
+          c = ".image";
+        n.types.push("image"),
           x(g + c, function () {
-            n.currItem.type === 'image' && a.cursor && s.addClass(a.cursor);
+            n.currItem.type === "image" && a.cursor && s.addClass(a.cursor);
           }),
           x(b + c, function () {
-            a.cursor && s.removeClass(a.cursor), r.off('resize' + j);
+            a.cursor && s.removeClass(a.cursor), r.off("resize" + j);
           }),
-          x('Resize' + c, n.resizeImage),
-          n.isLowIE && x('AfterChange', n.resizeImage);
+          x("Resize" + c, n.resizeImage),
+          n.isLowIE && x("AfterChange", n.resizeImage);
       },
       resizeImage: function () {
         var a = n.currItem;
@@ -569,9 +569,9 @@
           var b = 0;
           n.isLowIE &&
             (b =
-              parseInt(a.img.css('padding-top'), 10) +
-              parseInt(a.img.css('padding-bottom'), 10)),
-            a.img.css('max-height', n.wH - b);
+              parseInt(a.img.css("padding-top"), 10) +
+              parseInt(a.img.css("padding-bottom"), 10)),
+            a.img.css("max-height", n.wH - b);
         }
       },
       _onImageHasSize: function (a) {
@@ -579,9 +579,9 @@
           ((a.hasSize = !0),
           I && clearInterval(I),
           (a.isCheckingImgSize = !1),
-          z('ImageHasSize', a),
+          z("ImageHasSize", a),
           a.imgHidden &&
-            (n.content && n.content.removeClass('mfp-loading'),
+            (n.content && n.content.removeClass("mfp-loading"),
             (a.imgHidden = !1)));
       },
       findImageSize: function (a) {
@@ -606,32 +606,32 @@
           e = function () {
             b &&
               (b.img[0].complete
-                ? (b.img.off('.mfploader'),
+                ? (b.img.off(".mfploader"),
                   b === n.currItem &&
-                    (n._onImageHasSize(b), n.updateStatus('ready')),
+                    (n._onImageHasSize(b), n.updateStatus("ready")),
                   (b.hasSize = !0),
                   (b.loaded = !0),
-                  z('ImageLoadComplete'))
+                  z("ImageLoadComplete"))
                 : (d++, d < 200 ? setTimeout(e, 100) : f()));
           },
           f = function () {
             b &&
-              (b.img.off('.mfploader'),
+              (b.img.off(".mfploader"),
               b === n.currItem &&
                 (n._onImageHasSize(b),
-                n.updateStatus('error', g.tError.replace('%url%', b.src))),
+                n.updateStatus("error", g.tError.replace("%url%", b.src))),
               (b.hasSize = !0),
               (b.loaded = !0),
               (b.loadError = !0));
           },
           g = n.st.image,
-          h = c.find('.mfp-img');
+          h = c.find(".mfp-img");
         if (h.length) {
-          var i = document.createElement('img');
-          (i.className = 'mfp-img'),
-            (b.img = a(i).on('load.mfploader', e).on('error.mfploader', f)),
+          var i = document.createElement("img");
+          (i.className = "mfp-img"),
+            (b.img = a(i).on("load.mfploader", e).on("error.mfploader", f)),
             (i.src = b.src),
-            h.is('img') && (b.img = b.img.clone()),
+            h.is("img") && (b.img = b.img.clone()),
             (i = b.img[0]),
             i.naturalWidth > 0 ? (b.hasSize = !0) : i.width || (b.hasSize = !1);
         }
@@ -641,15 +641,15 @@
           b.hasSize
             ? (I && clearInterval(I),
               b.loadError
-                ? (c.addClass('mfp-loading'),
-                  n.updateStatus('error', g.tError.replace('%url%', b.src)))
-                : (c.removeClass('mfp-loading'), n.updateStatus('ready')),
+                ? (c.addClass("mfp-loading"),
+                  n.updateStatus("error", g.tError.replace("%url%", b.src)))
+                : (c.removeClass("mfp-loading"), n.updateStatus("ready")),
               c)
-            : (n.updateStatus('loading'),
+            : (n.updateStatus("loading"),
               (b.loading = !0),
               b.hasSize ||
                 ((b.imgHidden = !0),
-                c.addClass('mfp-loading'),
+                c.addClass("mfp-loading"),
                 n.findImageSize(b)),
               c)
         );
@@ -660,56 +660,56 @@
     L = function () {
       return (
         K === undefined &&
-          (K = document.createElement('p').style.MozTransform !== undefined),
+          (K = document.createElement("p").style.MozTransform !== undefined),
         K
       );
     };
-  a.magnificPopup.registerModule('zoom', {
+  a.magnificPopup.registerModule("zoom", {
     options: {
       enabled: !1,
-      easing: 'ease-in-out',
+      easing: "ease-in-out",
       duration: 300,
       opener: function (a) {
-        return a.is('img') ? a : a.find('img');
+        return a.is("img") ? a : a.find("img");
       },
     },
     proto: {
       initZoom: function () {
         var a = n.st.zoom,
-          d = '.zoom',
+          d = ".zoom",
           e;
         if (!a.enabled || !n.supportsTransition) return;
         var f = a.duration,
           g = function (b) {
             var c = b
                 .clone()
-                .removeAttr('style')
-                .removeAttr('class')
-                .addClass('mfp-animated-image'),
-              d = 'all ' + a.duration / 1e3 + 's ' + a.easing,
+                .removeAttr("style")
+                .removeAttr("class")
+                .addClass("mfp-animated-image"),
+              d = "all " + a.duration / 1e3 + "s " + a.easing,
               e = {
-                position: 'fixed',
+                position: "fixed",
                 zIndex: 9999,
                 left: 0,
                 top: 0,
-                '-webkit-backface-visibility': 'hidden',
+                "-webkit-backface-visibility": "hidden",
               },
-              f = 'transition';
+              f = "transition";
             return (
-              (e['-webkit-' + f] = e['-moz-' + f] = e['-o-' + f] = e[f] = d),
+              (e["-webkit-" + f] = e["-moz-" + f] = e["-o-" + f] = e[f] = d),
               c.css(e),
               c
             );
           },
           h = function () {
-            n.content.css('visibility', 'visible');
+            n.content.css("visibility", "visible");
           },
           i,
           j;
-        x('BuildControls' + d, function () {
+        x("BuildControls" + d, function () {
           if (n._allowZoom()) {
             clearTimeout(i),
-              n.content.css('visibility', 'hidden'),
+              n.content.css("visibility", "hidden"),
               (e = n._getItemToZoom());
             if (!e) {
               h();
@@ -723,7 +723,7 @@
                   (i = setTimeout(function () {
                     h(),
                       setTimeout(function () {
-                        j.remove(), (e = j = null), z('ZoomAnimationEnded');
+                        j.remove(), (e = j = null), z("ZoomAnimationEnded");
                       }, 16);
                   }, f));
               }, 16));
@@ -739,7 +739,7 @@
               }
               j.css(n._getOffset(!0)),
                 n.wrap.append(j),
-                n.content.css('visibility', 'hidden'),
+                n.content.css("visibility", "hidden"),
                 setTimeout(function () {
                   j.css(n._getOffset());
                 }, 16);
@@ -750,7 +750,7 @@
           });
       },
       _allowZoom: function () {
-        return n.currItem.type === 'image';
+        return n.currItem.type === "image";
       },
       _getItemToZoom: function () {
         return n.currItem.hasSize ? n.currItem.img : !1;
@@ -761,8 +761,8 @@
           ? (c = n.currItem.img)
           : (c = n.st.zoom.opener(n.currItem.el || n.currItem));
         var d = c.offset(),
-          e = parseInt(c.css('padding-top'), 10),
-          f = parseInt(c.css('padding-bottom'), 10);
+          e = parseInt(c.css("padding-top"), 10),
+          f = parseInt(c.css("padding-bottom"), 10);
         d.top -= a(window).scrollTop() - e;
         var g = {
           width: c.width(),
@@ -770,20 +770,20 @@
         };
         return (
           L()
-            ? (g['-moz-transform'] = g.transform =
-                'translate(' + d.left + 'px,' + d.top + 'px)')
+            ? (g["-moz-transform"] = g.transform =
+                "translate(" + d.left + "px," + d.top + "px)")
             : ((g.left = d.left), (g.top = d.top)),
           g
         );
       },
     },
   });
-  var M = 'retina';
+  var M = "retina";
   a.magnificPopup.registerModule(M, {
     options: {
       replaceSrc: function (a) {
         return a.src.replace(/\.\w+$/, function (a) {
-          return '@2x' + a;
+          return "@2x" + a;
         });
       },
       ratio: 1,
@@ -795,13 +795,13 @@
             b = a.ratio;
           (b = isNaN(b) ? b() : b),
             b > 1 &&
-              (x('ImageHasSize.' + M, function (a, c) {
+              (x("ImageHasSize." + M, function (a, c) {
                 c.img.css({
-                  'max-width': c.img[0].naturalWidth / b,
-                  width: '100%',
+                  "max-width": c.img[0].naturalWidth / b,
+                  width: "100%",
                 });
               }),
-              x('ElementParse.' + M, function (c, d) {
+              x("ElementParse." + M, function (c, d) {
                 d.src = a.replaceSrc(d, b);
               }));
         }
@@ -810,19 +810,19 @@
   }),
     (function () {
       var b = 1e3,
-        c = 'ontouchstart' in window,
+        c = "ontouchstart" in window,
         d = function () {
-          r.off('touchmove' + f + ' touchend' + f);
+          r.off("touchmove" + f + " touchend" + f);
         },
-        e = 'mfpFastClick',
-        f = '.' + e;
+        e = "mfpFastClick",
+        f = "." + e;
       (a.fn.mfpFastClick = function (e) {
         return a(this).each(function () {
           var g = a(this),
             h;
           if (c) {
             var i, j, k, l, m, n;
-            g.on('touchstart' + f, function (a) {
+            g.on("touchstart" + f, function (a) {
               (l = !1),
                 (n = 1),
                 (m = a.originalEvent
@@ -831,7 +831,7 @@
                 (j = m.clientX),
                 (k = m.clientY),
                 r
-                  .on('touchmove' + f, function (a) {
+                  .on("touchmove" + f, function (a) {
                     (m = a.originalEvent ? a.originalEvent.touches : a.touches),
                       (n = m.length),
                       (m = m[0]);
@@ -841,7 +841,7 @@
                     )
                       (l = !0), d();
                   })
-                  .on('touchend' + f, function (a) {
+                  .on("touchend" + f, function (a) {
                     d();
                     if (l || n > 1) return;
                     (h = !0),
@@ -854,14 +854,14 @@
                   });
             });
           }
-          g.on('click' + f, function () {
+          g.on("click" + f, function () {
             h || e();
           });
         });
       }),
         (a.fn.destroyMfpFastClick = function () {
-          a(this).off('touchstart' + f + ' click' + f),
-            c && r.off('touchmove' + f + ' touchend' + f);
+          a(this).off("touchstart" + f + " click" + f),
+            c && r.off("touchmove" + f + " touchend" + f);
         });
     })(),
     B();
